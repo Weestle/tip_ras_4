@@ -78,7 +78,7 @@ def gauss(n):
     return I
 
 
-print('%-20s %-20s %-20s %-20s' % ('Трапеция', '4', '6', '8'))
-print('%-20s %-20s %-20s %-20s' % ('Iтр', trapezoid(4), trapezoid(6), trapezoid(8)))
-print('%-20s %-20s %-20s %-20s' % ('Iпар', parabola(4), parabola(6), parabola(8)))
-print('%-20s %-20s %-20s %-20s' % ('Ig', gauss(4), gauss(6), gauss(8)))
+print('%-10s %-20s %-20s %-20s' % ('Трапеция', '4', '6', '8'))
+print('%-10s %-20s %-20s %-20s' % ('Iтр', trapezoid(4), trapezoid(6), trapezoid(8)))
+print('%-10s %-20s %-20s %-20s' % ('Iпар', parabola(4), parabola(6), parabola(8)))
+print('%-10s %-20s %-20s %-20s' % ('Ig', gauss(4), gauss(6), gauss(8)))
