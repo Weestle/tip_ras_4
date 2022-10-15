@@ -29,7 +29,7 @@ def trapezoid(n):
         x = a + i * h
         I += 2 * F(x)
     I = (I + a + b) * h / 2
-    print(I)
+    return I
 
 
 def parabola(n):
@@ -45,13 +45,40 @@ def parabola(n):
             I += 2 * F(x)
         c += 1
     I = (I + F(a) + F(b)) * h / 3
-    print(I)
+    return I
 
 
-def
-# trapezoid(4)
-# trapezoid(6)
-# trapezoid(8)
-# parabola(4)
-# parabola(6)
-# parabola(8)
+
+
+def gauss(n):
+    ti4 = [0.861136, 0.339981]
+    ti6 = [0.932464, 0.661209, 0.238619]
+    ti8 = [0.960289, 0.796666, 0.525532, 0.183434]
+    A4 = [0.347854, 0.652145]
+    A6 = [0.171324, 0.360761, 0.467913]
+    A8 = [0.101228, 0.222381, 0.313706, 0.362683]
+
+    if n == 4:
+        ti = ti4
+        A = A4
+    if n == 6:
+        ti = ti6
+        A = A6
+    if n == 8:
+        ti = ti8
+        A = A8
+    # print(A)
+    I = 0
+    for i in range(int(n / 2)):
+        I += A[i] * F((a + b) / 2 + (b - a) / 2 * ti[i])
+        I += A[i] * F((a + b) / 2 - (b - a) / 2 * ti[i])
+        # print(A[i], F((a + b) / 2 + (b - a) / 2 * ti[i]))
+        # print(A[i], F((a + b) / 2 - (b - a) / 2 * ti[i]))
+    I *= 0.5
+    return I
+
+
+print('%-20s %-20s %-20s %-20s' % ('Трапеция', '4', '6', '8'))
+print('%-20s %-20s %-20s %-20s' % ('Iтр', trapezoid(4), trapezoid(6), trapezoid(8)))
+print('%-20s %-20s %-20s %-20s' % ('Iпар', parabola(4), parabola(6), parabola(8)))
+print('%-20s %-20s %-20s %-20s' % ('Ig', gauss(4), gauss(6), gauss(8)))
