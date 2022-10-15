@@ -2,12 +2,14 @@ import math
 
 # Вариант 5
 
-K = 4.0
-L = 2.4
+# K = 4.0
+# L = 2.4
+
+
+K = float(input('K = '))
+L = float(input('L = '))
 a = (K - L) / 2
 b = K + L
-# a = 0
-# b = 1
 
 def exact_I(x):
     global K, L
